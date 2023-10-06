@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+form {
+  width: 400px;
+  padding: 10px;
+  margin: auto;
+  box-shadow: 0px 0px 10px 2px #ccc;
+}
+form label {
+  display: block;
+  font-size: 16px;
+}
+form input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+form button {
+  padding: 10px 25px;
+  background-color: aqua;
+  color: rgb(18, 18, 18);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin: auto;
+}
+.main {
+  width: 1320px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.items {
+  flex-basis: 20%;
+  margin: 1%;
+  box-shadow: 0px 0px 10px 2px #ccc;
+  padding: 1%;
+  position: relative;
+}
+.items span {
+  position: absolute;
+  font-size: 30px;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+.items h5 {
+  margin-top: 10px;
+}

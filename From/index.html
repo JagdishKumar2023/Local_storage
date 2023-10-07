@@ -43,7 +43,7 @@
         email: "wsPradeep@gamil.com",
       },
     ];
-    localStorage.setItem("name", JSON.stringify(user));
+    // localStorage.setItem("name", JSON.stringify(user));
 
     let form = document.querySelector("form");
     form.addEventListener("submit", (event) => {
@@ -53,5 +53,13 @@
       console.log(name, email, Phone);
       event.preventDefault();
     });
+
+    var userData = JSON.parse(localStorage.getItem("userDetails")) ?? [];
+    userData.push({
+      name: name,
+      email: email,
+      Phone: Phone,
+    });
+    console.log(userData);
   </script>
 </html>

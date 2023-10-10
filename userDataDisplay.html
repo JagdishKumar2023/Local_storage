@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <a href="./saveToLocalStorage.html">Back To sign up page</a>
+        <ul>
+          <li>
+            <a href=""></a>
+          </li>
+        </ul>
+      </div>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Email</td>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script>
+  let signup_data = JSON.parse(localStorage.getItem("signUpData"));
+  console.log(signup_data);
+
+  signup_data.map(function (ele, idx, arr) {
+    let tbdy = document.getElementById("tbody");
+
+    let tr = document.createElement("tr");
+
+    let nameTd = document.createElement("td");
+    nameTd.innerText = ele.name;
+
+    let emailTd = document.createElement("td");
+    emailTd.innerText = ele.email;
+
+    tr.append(nameTd, emailTd);
+    tbdy.append(tr);
+  });
+</script>

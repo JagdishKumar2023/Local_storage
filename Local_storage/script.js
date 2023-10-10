@@ -1,4 +1,4 @@
-//===SET ITEM AND GET ITEMS.
+//===SET ITEM AND GET ITEMS OR REMOVE
 
 // console.log(window.localStorage);
 
@@ -38,22 +38,22 @@
 
 // SMALL PROJECT IN LOCAL STORAGE
 
-const themeSelector = document.querySelector("#themeSelector");
+// const themeSelector = document.querySelector("#themeSelector");
 
-themeSelector.addEventListener("change", (e) => {
-  localStorage.setItem("theme", e.target.value);
-  changeTheme(e.target.value);
-});
+// themeSelector.addEventListener("change", (e) => {
+//   localStorage.setItem("theme", e.target.value);
+//   changeTheme(e.target.value);
+// });
 
-function changeTheme(theme) {
-  if (theme === "dark") {
-    document.body.style.backgroundColor = "#222";
-  } else if (theme === "green") {
-    document.body.style.backgroundColor = "green";
-  } else {
-    document.body.style.backgroundColor = "#fff";
-  }
-}
+// function changeTheme(theme) {
+//   if (theme === "dark") {
+//     document.body.style.backgroundColor = "#222";
+//   } else if (theme === "green") {
+//     document.body.style.backgroundColor = "green";
+//   } else {
+//     document.body.style.backgroundColor = "#fff";
+//   }
+// }
 
 // window.addEventListener('storage',(e) =>){
 //     if(e.key === 'theme'){

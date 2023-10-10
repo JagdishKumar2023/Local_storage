@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <a href=""></a>
+      </div>
+      <div>
+        <h1>sign up page</h1>
+      </div>
+      <form onsubmit="handleFormSubmit(event)">
+        <input type="text" placeholder="enter your name" value="" id="name" />
+        <input
+          type="email"
+          placeholder="emter your email"
+          value=""
+          id="email"
+        />
+        <input
+          type="password"
+          placeholder="enter password"
+          value=""
+          id="password"
+        />
+        <button>Sign Up</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    let name = document.getElementById("name");
+    let nameValue = name.value;
+
+    let email = document.getElementById("emai");
+    let emailValue = email.value;
+
+    let password = document.getElementById("password");
+    let passwordValue = password.value;
+
+    console.log(nameValue, emailValue, passwordValue);
+
+    let signup_data = {
+      name: nameValue,
+      email: emailValue,
+      password: passwordValue,
+    };
+
+    let signUpData = JSON.parse(localStorage.getItem("sigUpData")) || [];
+
+    // pushing the Object/signup_data into Array
+
+    signUpData.push(signup_data);
+
+    localStorage.setItem("sigUpData", JSON.stringify(signUpData));
+
+    name.value = "";
+    email.value = "";
+    password.value = "";
+  }
+</script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Display data</title>
   </head>
   <body>
     <div class="container">
@@ -20,6 +20,7 @@
           <tr>
             <td>Name</td>
             <td>Email</td>
+            <td>password</td>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -32,7 +33,7 @@
   let signup_data = JSON.parse(localStorage.getItem("signUpData"));
   console.log(signup_data);
 
-  signup_data.map(function (ele, idx, arr) {
+  signup_data.map(function (ele, idx, array) {
     let tbdy = document.getElementById("tbody");
 
     let tr = document.createElement("tr");
@@ -43,7 +44,10 @@
     let emailTd = document.createElement("td");
     emailTd.innerText = ele.email;
 
-    tr.append(nameTd, emailTd);
+    let passwordTd = document.createElement("td");
+    passwordTd.innerText = ele.password;
+
+    tr.append(nameTd, emailTd, passwordTd);
     tbdy.append(tr);
   });
 </script>
